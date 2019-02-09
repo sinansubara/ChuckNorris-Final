@@ -9,9 +9,6 @@
       <div class="nav-wrapper">
         <a href="#!" class="right brand-logo">Logo</a>
         <ul class="left hide-on-med-and-down">
-          <!-- <li><a href="sass.html">Sass</a></li>
-          <li><a href="badges.html">Components</a></li> -->
-          <!-- Dropdown Trigger -->
           <li>
             <a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown
               <i class="material-icons right">arrow_drop_down</i>
