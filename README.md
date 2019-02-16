@@ -1,4 +1,5 @@
 # ChuckNorris-Final
+Preview: http://sinan-jokes.netlify.com
 
 ## Project setup
 ```
