@@ -1,27 +1,43 @@
 <template>
-  <div>
-    <button v-on:click="get">FETCH</button>
-  </div>
+  <main>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+  </main>
 </template>
 
 <script>
-import axios from 'axios';
 
 export default {
   methods: {
-    get() {
-      // eslint-disable-next-line
-      axios.get('https://api.chucknorris.io/jokes') // eslint-disable-next-line
-        .then(response => console.log(response)) // eslint-disable-next-line
-        .catch(error => console.log(error));
-    },
   },
   mounted() {
-
   },
 };
 </script>
 
 <style lang="scss" scoped>
-
+  main {
+    flex: 1 0 auto;
+  }
+  .card {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    display: inline-flex;
+    font-size: 30px;
+  }
 </style>
