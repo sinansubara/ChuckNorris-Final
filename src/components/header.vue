@@ -1,20 +1,25 @@
 <template>
   <header>
-    <nav class="z-depth-5">
+    <ul id="dropdown1" class="dropdown-content">
+      <li v-for="(category, index) in categories" :key="index">
+        <a href="#!">{{ category }}</a>
+      </li>
+    </ul>
+    <nav>
       <div class="nav-wrapper blue-grey">
-        <div class="left input-field col s12">
-        <select>
-          <option value="" disabled selected>Select category</option>
-          <option value="1">Option 1</option>
-          <option value="2">Option 2</option>
-          <option value="3">Option 3</option>
-        </select>
-      </div>
         <a href="#!" class="right brand-logo">
           <img src="../assets/chucknorris_logo.png" alt="Logo">
         </a>
+        <ul class="left hide-on-med-and-down">
+          <li>
+            <a class="dropdown-trigger waves-effect waves-purple"
+                href="#!" data-target="dropdown1">Dropdown
+              <i class="material-icons right">arrow_drop_down</i>
+            </a>
+          </li>
+        </ul>
       </div>
-    </nav>
+</nav>
   </header>
 </template>
 
@@ -27,11 +32,8 @@ export default {
   },
   computed: {
     categories() {
-      return this.$store.getters.categories;
+      return this.$store.getters.listCategories;
     },
-  },
-  created() {
-    this.$store.dispatch('getCategories');
   },
 };
 </script>
@@ -43,7 +45,7 @@ export default {
   nav {
     height: 100px;
   }
-  .input-field {
-    margin: 18px 10px 0 10px;
+  ul {
+    margin: 15px 10px 0 15px;
   }
 </style>

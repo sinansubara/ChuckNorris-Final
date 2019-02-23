@@ -22,6 +22,9 @@ export default {
     // eslint-disable-next-line
     M.AutoInit();
   },
+  created() {
+    this.$store.dispatch('getCategories');
+  },
 };
 </script>
 
