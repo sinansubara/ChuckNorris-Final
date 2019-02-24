@@ -2,8 +2,11 @@
   <footer class="page-footer blue-grey">
     <div class="footer-copyright blue-grey">
       <div class="container">
-        <p class="left grey-text text-lighten-2"><a class="white-text" href="https://github.com/sinansubara" target="_blank" title="Open github">Sinan Šubara</a> © 2019 Copyright</p>
-        <a class="white-text right footerlink" href="#!">More Links</a>
+        <p class="left grey-text text-lighten-2">
+          <a class="white-text" href="https://github.com/sinansubara" target="_blank" title="Open norrishub">
+            Sinan Šubara</a>
+          © 2019 ChuckNorrisrights</p>
+        <a class="white-text right footerlink" href="https://github.com/sinansubara" target="_blank" title="Open norrishub">More Chuck Norris</a>
       </div>
     </div>
   </footer>
@@ -22,5 +25,8 @@ export default {
 }
    p, .footerlink {
     margin: 30px 15px 0 15px;
+  }
+  a {
+    color: #F15A24 !important;
   }
 </style>

@@ -12,8 +12,8 @@
         </a>
         <ul class="hide-on-med-and-down">
           <li class="dropBtn">
-            <a class="dropdown-trigger waves-effect waves-purple"
-                href="#!" data-target="dropdown1">Dropdown
+            <a class="dropdown-trigger waves-effect waves-orange"
+                href="#!" data-target="dropdown1">Chuckdown
               <i class="material-icons right">arrow_drop_down</i>
             </a>
           </li>
@@ -22,10 +22,10 @@
           <div class="input-field">
             <input id="search" type="search" required>
             <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-            <i class="material-icons xBtn">close</i>
+            <!-- <i class="material-icons xBtn">close</i> -->
           </div>
         </form>
-        <a class="btn-floating btn-large halfway-fab waves-effect waves-dark orange"
+        <a class="btn-floating btn-large halfway-fab waves-effect waves-dark orng"
               @click="getJoke">
         <i class="material-icons">add</i>
       </a>
@@ -79,7 +79,7 @@ export default {
   }
   .xBtn {
     right: 41rem !important;
-    margin-top: 15px;
+    margin-top: 17px;
   }
   #search {
     width: 350px;
@@ -89,10 +89,20 @@ export default {
   }
   .label-icon {
     left: 31rem !important;
-    margin-top: 15px;
+    margin-top: 17px;
   }
   .halfway-fab {
     right: 25rem !important;
     bottom: 20px !important;
+  }
+  #search:focus {
+    background-color: #F15A24;
+  }
+  .orng {
+    background-color: #F15A24;
+  }
+  nav ul a {
+    color: #F15A24;
+    font-size: 20px;
   }
 </style>

@@ -1,68 +1,12 @@
 <template>
   <main>
-    <div class="row">
-      <div class="col s12 m5">
-        <div class="card-panel teal">
-          <span class="white-text">I am a very simple card.
-            I am good at containing small bits of information.
-            I am convenient because I require little markup to use effectively.
-            I am similar to what is called a panel in other frameworks.
-          </span>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col s12 m5">
-        <div class="card-panel teal">
-          <span class="white-text">I am a very simple card.
-            I am good at containing small bits of information.
-            I am convenient because I require little markup to use effectively.
-            I am similar to what is called a panel in other frameworks.
-          </span>
-        </div>
-      </div>
-    </div>
-        <div class="row">
-      <div class="col s12 m5">
-        <div class="card-panel teal">
-          <span class="white-text">I am a very simple card.
-            I am good at containing small bits of information.
-            I am convenient because I require little markup to use effectively.
-            I am similar to what is called a panel in other frameworks.
-          </span>
-        </div>
-      </div>
-    </div>
-        <div class="row">
-      <div class="col s12 m5">
-        <div class="card-panel teal">
-          <span class="white-text">I am a very simple card.
-            I am good at containing small bits of information.
-            I am convenient because I require little markup to use effectively.
-            I am similar to what is called a panel in other frameworks.
-          </span>
-        </div>
-      </div>
-    </div>
-        <div class="row">
-      <div class="col s12 m5">
-        <div class="card-panel teal">
-          <span class="white-text">I am a very simple card.
-            I am good at containing small bits of information.
-            I am convenient because I require little markup to use effectively.
-            I am similar to what is called a panel in other frameworks.
-          </span>
-        </div>
-      </div>
-    </div>
-        <div class="row">
-      <div class="col s12 m5">
-        <div class="card-panel teal">
-          <span class="white-text">I am a very simple card.
-            I am good at containing small bits of information.
-            I am convenient because I require little markup to use effectively.
-            I am similar to what is called a panel in other frameworks.
-          </span>
+    <div class="grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 200 }'>
+      <div class="row" v-for="(jokes, index) in getJokes" :key="index">
+        <div class="col s12 m5">
+          <div class="card-panel teal">
+            <span class="white-text"> {{ jokes }}
+            </span>
+          </div>
         </div>
       </div>
     </div>
@@ -70,21 +14,32 @@
 </template>
 
 <script>
+import Masonry from 'masonry-layout';
 
 export default {
   methods: {
   },
   mounted() {
+    const grid = document.querySelector('.grid');
+    this.msnry = new Masonry(grid, {
+      itemSelector: '.grid-item',
+      columnWidth: '.grid-sizer',
+      percentPosition: true,
+      gutter: 10,
+    });
   },
   computed: {
-    categories() {
-      return this.$store.getters.listCategories;
+    getJokes() {
+      return this.$store.getters.listJokes;
     },
   },
 };
 </script>
 
 <style lang="scss" scoped>
+  .grid {
+    padding-top: 60px;
+  }
   main {
     flex: 1 0 auto;
   }
@@ -102,5 +57,11 @@ export default {
     margin: 10px;
     display: inline-flex;
     font-size: 30px;
+  }
+  .grid-item  {
+    margin-bottom: 10px;
+    .card {
+      padding: 10px;
+    }
   }
 </style>
