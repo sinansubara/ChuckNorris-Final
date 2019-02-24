@@ -8,4 +8,16 @@ export default {
         state.categories.push(...response.data);
       });
   },
+  [types.GET_RANDJOKE](state) {
+    axios.get('https://api.chucknorris.io/jokes/random')
+      .then((response) => {
+        state.jokes.push(response.data.value);
+      });
+  },
+  [types.GET_JOKE](state, category) {
+    axios.get(`https://api.chucknorris.io/jokes/random?category=${category}`)
+      .then((response) => {
+        state.jokes.push(response.data.value);
+      });
+  },
 };
